@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{106B1C8E-B345-44E4-AEE1-32FB40060C76}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Epidemic.BLL</RootNamespace>
+    <AssemblyName>Epidemic.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AgeGroupController.cs" />
+    <Compile Include="Controllers\Aproximate\AproximateBetaGamma.cs" />
+    <Compile Include="Controllers\Aproximate\ForecastAproximate.cs" />
+    <Compile Include="Controllers\Aproximate\IFuncAproximate.cs" />
+    <Compile Include="Controllers\Aproximate\FuriousAproximate.cs" />
+    <Compile Include="Controllers\Aproximate\LineFuncAproximate.cs" />
+    <Compile Include="Controllers\Aproximate\StochasticAproximate.cs" />
+    <Compile Include="Controllers\Clinic\ClinicController.cs" />
+    <Compile Include="Controllers\Clinic\ClinicCounterController.cs" />
+    <Compile Include="Controllers\Filters\FilterController.cs" />
+    <Compile Include="Controllers\Input\Transform.cs" />
+    <Compile Include="Controllers\Input\Valid.cs" />
+    <Compile Include="Controllers\SirController.cs" />
+    <Compile Include="Controllers\SisAgeController.cs" />
+    <Compile Include="Controllers\SisController.cs" />
+    <Compile Include="Controllers\SisvAgeController.cs" />
+    <Compile Include="Controllers\Statistic\Stat.cs" />
+    <Compile Include="Exceptions\BllException.cs" />
+    <Compile Include="Models\AgeGroup.cs" />
+    <Compile Include="Models\AproximateFunction.cs" />
+    <Compile Include="Models\BirthMode.cs" />
+    <Compile Include="Models\ClinicModel.cs" />
+    <Compile Include="Models\ClinicModels\Person.cs" />
+    <Compile Include="Models\DeathMode.cs" />
+    <Compile Include="Models\EpidemicModel.cs" />
+    <Compile Include="Models\ForecastMode.cs" />
+    <Compile Include="Models\FuriousSeries.cs" />
+    <Compile Include="Models\Optimization\OptimalValue.cs" />
+    <Compile Include="Models\SirData.cs" />
+    <Compile Include="Models\Sis.cs" />
+    <Compile Include="Models\SisAge.cs" />
+    <Compile Include="Models\SisAgeData.cs" />
+    <Compile Include="Models\SisData.cs" />
+    <Compile Include="Models\SisvAge.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EpidemicService.cs" />
+    <Compile Include="Controllers\Aproximate\HyperbolicFuncAproximate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epidemic.DAL\Epidemic.DAL.csproj">
+      <Project>{bdb37348-bb80-405c-8ee4-096d49cbe3fe}</Project>
+      <Name>Epidemic.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
